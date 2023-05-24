@@ -1,5 +1,5 @@
 # microservice
-micro-project
+
 Application de gestion des régimes et des plats
 Cette application vous permet de gérer les données des régimes et des plats en utilisant une combinaison 
 de REST, gRPC et GraphQL. Vous pouvez insérer des données dans les tables "Régime" et "Plat" en utilisant différentes méthodes d'API.
