@@ -82,5 +82,3 @@ server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), (er
 
 console.log(`plat microservice is running on port ${port}`);
 
-// movie---plat
-//tvshow--regime
