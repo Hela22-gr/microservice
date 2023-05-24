@@ -1,0 +1,43 @@
+syntax = "proto3";
+package regime;
+
+// Définition du message 
+message Regime {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+// Ajouter d'autres champs de données pour les régimes
+}
+
+// Définition des messages de requête et de réponse pour les méthodes
+message GetRegimeRequest {
+    string regime_id = 1;
+}
+
+message GetRegimeResponse {
+    Regime regime = 1;
+}
+
+message SearchRegimeRequest {
+    string query = 1;
+}
+
+message SearchRegimeResponse {
+    repeated Regime regime = 1;
+}
+
+message CreateRegimeRequest {
+  string title = 1;
+  string description = 2;
+}
+
+message CreateRegimeResponse {
+  Regime regime = 1;
+}
+
+// Définition du service 
+service RegimeService {
+    rpc getregime(GetRegimeRequest) returns (GetRegimeResponse);
+    rpc searchregime(SearchRegimeRequest) returns (SearchRegimeResponse);
+    rpc createregime(CreateRegimeRequest) returns (CreateRegimeResponse);
+}

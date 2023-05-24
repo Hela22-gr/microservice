@@ -1,0 +1,42 @@
+syntax = "proto3";
+package plat;
+
+// Définition du message plat
+message Plat {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+}
+
+// Définition des messages de requête et de réponse pour les méthodes 
+message GetPlatRequest {
+    string plat_id = 1;
+}
+
+message GetPlatResponse {
+    Plat plat = 1;
+}
+
+message SearchPlatRequest {
+    string query = 1;
+}
+
+message SearchPlatResponse {
+    repeated Plat plats = 1;
+}
+
+message CreatePlatRequest {
+  string title = 1;
+  string description = 2;
+}
+
+message CreatePlatResponse {
+  Plat plat = 1;
+}
+
+// Définition du service de plat
+service PlatService {
+    rpc GetPlat(GetPlatRequest) returns (GetPlatResponse);
+    rpc SearchPlat(SearchPlatRequest) returns (SearchPlatResponse);
+    rpc CreatePlat(CreatePlatRequest) returns (CreatePlatResponse);
+}
